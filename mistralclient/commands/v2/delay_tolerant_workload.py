@@ -26,8 +26,8 @@ from mistralclient import utils
 LOG = logging.getLogger(__name__)
 
 
-def format_list(trigger=None):
-    return format(trigger, lister=True)
+def format_list(dtw=None):
+    return format(dtw, lister=True)
 
 
 def format(dtw=None, lister=False):
@@ -87,7 +87,7 @@ class Get(command.ShowOne):
         mistral_client = self.app.client_manager.workflow_engine
 
         return format(mistral_client.delay_tolerant_workloads.get(
-            parsed_args.cron_trigger
+            parsed_args.delay_tolerant_workload
         ))
 
 

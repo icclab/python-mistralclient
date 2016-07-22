@@ -46,12 +46,12 @@ class TestCLIDTW(base.BaseCommandTest):
         result = self.call(
             delay_tolerant_cmd.Create,
             app_args=['dtw_test', 'flow1', '--deadline', '2016-07-22T00:00:00',
-                      '--params', '{}', '--job-duration', 4]
+                      '--params', '{}', '--job-duration', '4']
         )
 
         self.assertEqual(
             (
-                'dtw_test', 'flow1', '2016-07-22T00:00:00', {}, 4, '1', '1'
+                'dtw_test', 'flow1', {}, '2016-07-22T00:00:00', 4, '1', '1'
             ),
             result[1]
         )
@@ -63,7 +63,7 @@ class TestCLIDTW(base.BaseCommandTest):
 
         self.assertEqual(
             [(
-                'dtw_test', 'flow1', '2016-07-22T00:00:00', {}, 4, '1', '1'
+                'dtw_test', 'flow1', {}, '2016-07-22T00:00:00', 4, '1', '1'
             )],
             result[1]
         )
@@ -75,7 +75,7 @@ class TestCLIDTW(base.BaseCommandTest):
 
         self.assertEqual(
             (
-                'dtw_test', 'flow1', '2016-07-22T00:00:00', {}, 4, '1', '1'
+                'dtw_test', 'flow1', {}, '2016-07-22T00:00:00', 4, '1', '1'
             ),
             result[1]
         )
