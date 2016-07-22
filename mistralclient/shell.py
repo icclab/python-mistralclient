@@ -24,6 +24,7 @@ from mistralclient.auth import auth_types
 import mistralclient.commands.v2.action_executions
 import mistralclient.commands.v2.actions
 import mistralclient.commands.v2.cron_triggers
+import mistralclient.commands.v2.delay_tolerant_workload
 import mistralclient.commands.v2.environments
 import mistralclient.commands.v2.executions
 import mistralclient.commands.v2.members
@@ -475,6 +476,14 @@ class MistralShell(app.App):
             mistralclient.commands.v2.cron_triggers.Create,
             'cron-trigger-delete':
             mistralclient.commands.v2.cron_triggers.Delete,
+            'delay-tolerant-workload-get':
+                mistralclient.commands.v2.delay_tolerant_workload.Get,
+            'delay-tolerant-workload-list':
+                mistralclient.commands.v2.delay_tolerant_workload.List,
+            'delay-tolerant-workload-create':
+                mistralclient.commands.v2.delay_tolerant_workload.Create,
+            'delay-tolerant-workload-delete':
+                mistralclient.commands.v2.delay_tolerant_workload.Delete,
             'service-list': mistralclient.commands.v2.services.List,
             'member-create': mistralclient.commands.v2.members.Create,
             'member-delete': mistralclient.commands.v2.members.Delete,
