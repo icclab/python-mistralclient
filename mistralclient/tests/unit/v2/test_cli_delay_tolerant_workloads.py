@@ -40,7 +40,7 @@ DTW = delay_tolerant_workload.DelayTolerantWorkload(mock, DTW_DICT)
 class TestCLIDTW(base.BaseCommandTest):
     @mock.patch('argparse.open', create=True)
     def test_create(self, mock_open):
-        self.client.cron_triggers.create.return_value = DTW
+        self.client.delay_tolerant_workloads.create.return_value = DTW
         mock_open.return_value = mock.MagicMock(spec=open)
 
         result = self.call(
