@@ -21,6 +21,7 @@ from mistralclient.api import httpclient
 from mistralclient.api.v2 import action_executions
 from mistralclient.api.v2 import actions
 from mistralclient.api.v2 import cron_triggers
+from mistralclient.api.v2 import delay_tolerant_workload
 from mistralclient.api.v2 import environments
 from mistralclient.api.v2 import executions
 from mistralclient.api.v2 import members
@@ -116,3 +117,5 @@ class Client(object):
         self.action_executions = action_executions.ActionExecutionManager(self)
         self.services = services.ServiceManager(self)
         self.members = members.MemberManager(self)
+        self.delay_tolerant_workloads = \
+            delay_tolerant_workload.DelayTolerantWorkloadManager(self)
