@@ -144,10 +144,10 @@ class Create(command.ShowOne):
         dtw = mistral_client.delay_tolerant_workloads.create(
             parsed_args.name,
             parsed_args.workflow_identifier,
-            wf_input,
-            wf_params,
             parsed_args.deadline,
-            parsed_args.job_duration
+            parsed_args.job_duration,
+            wf_input,
+            wf_params
         )
 
         return format(dtw)
